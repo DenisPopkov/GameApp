@@ -14,7 +14,7 @@
         android:theme="@style/Theme.GameApp"
         tools:targetApi="34">
         <activity
-            android:name=".MainActivity"
+            android:name=".screens.main.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.GameApp">
             <intent-filter>
