@@ -20,7 +20,8 @@ import ru.popkov.gameapp.ui.theme.SecondTextColor
 
 @Composable
 fun ReviewComponent(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    ratingValue: Float = 4.9f
 ) {
     Spacer(modifier = modifier.padding(top = 12.dp))
     Row(
@@ -40,7 +41,7 @@ fun ReviewComponent(
         ) {
             RatingBarComponent(
                 modifier = modifier,
-                ratingValue = 4.5f
+                ratingValue = ratingValue
             )
             TextComponent(
                 modifier = modifier,

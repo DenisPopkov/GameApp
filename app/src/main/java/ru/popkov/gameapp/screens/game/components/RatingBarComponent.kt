@@ -28,7 +28,7 @@ fun RatingBarComponent(
             )
         }
 
-        if (ratingValue % 1f == 0.5f) {
+        if (ratingValue % 1f != 0f) {
             Image(
                 modifier = modifier.size(size = 12.dp),
                 painter = painterResource(R.drawable.ic_star_half),

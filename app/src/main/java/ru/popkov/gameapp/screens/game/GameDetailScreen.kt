@@ -131,7 +131,7 @@ fun GameDetailScreen(
             )
         }
         item {
-            ReviewComponent(modifier = modifier)
+            ReviewComponent()
         }
         itemsIndexed(gameDetailsValue.gameReview) { index, reviewer ->
             ReviewerComponent(
