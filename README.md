@@ -8,10 +8,6 @@
 |:------------------------------------------------------:|:-------------------------------------------------------:|
 | <img src="assets/first_game_detail.webp" height="400"> | <img src="assets/second_game_detail.webp" height="400"> |
 
-|                                                Video                                                |
-|:---------------------------------------------------------------------------------------------------:|
-| [<img src="assets/first_game_detail.png" height="400">](https://www.youtube.com/shorts/toYbKX4N39o) |
-
 ## Topics
 
 * DI
