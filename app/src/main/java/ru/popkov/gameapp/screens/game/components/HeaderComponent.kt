@@ -14,10 +14,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.constraintlayout.compose.ConstraintLayout
 import ru.popkov.gameapp.R
 import ru.popkov.gameapp.common.ImageComponent
 import ru.popkov.gameapp.common.TextComponent
@@ -30,70 +30,50 @@ import ru.popkov.gameapp.ui.theme.ThirdTextColor
 fun HeaderComponent(
     modifier: Modifier = Modifier
 ) {
-    Layout(
-        modifier = modifier,
-        content = {
-            ImageComponent(
-                modifier = modifier
-                    .fillMaxWidth()
-                    .height(height = 285.dp),
-                image = R.drawable.ic_top_image,
-                scale = ContentScale.FillWidth,
-                contentDescription = "Top screen image"
-            )
-            Row(
-                modifier = modifier.padding(start = 24.dp, top = 10.dp),
-                horizontalArrangement = Arrangement.spacedBy(space = 12.dp),
-                verticalAlignment = Alignment.CenterVertically,
+    ConstraintLayout(modifier = modifier) {
+        val (image, _) = createRefs()
+        ImageComponent(
+            modifier = modifier
+                .fillMaxWidth()
+                .height(height = 285.dp),
+            image = R.drawable.ic_top_image,
+            scale = ContentScale.FillWidth,
+            contentDescription = "Top screen image"
+        )
+
+        Row(
+            modifier = Modifier
+                .constrainAs(image) {
+                    bottom.linkTo(parent.bottom, margin = (-64).dp)
+                    start.linkTo(parent.start, margin = (22).dp)
+                }
+        ) {
+            LogoComponent()
+            Column(
+                modifier = Modifier.padding(top = 34.dp, start = 12.dp)
             ) {
-                LogoComponent()
-                Column {
-                    Spacer(modifier = modifier.padding(top = 20.dp))
+                TextComponent(
+                    modifier = modifier,
+                    text = R.string.game_name,
+                    textColor = Color.White,
+                    lineHeight = 26.sp,
+                    textStyle = ModernistTextBold20
+                )
+                Spacer(modifier = modifier.padding(top = 5.dp))
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(space = 10.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    RatingBarComponent()
                     TextComponent(
                         modifier = modifier,
-                        text = R.string.game_name,
-                        textColor = Color.White,
+                        text = R.string.game_rating_value,
+                        textColor = ThirdTextColor,
                         lineHeight = 26.sp,
-                        textStyle = ModernistTextBold20
+                        textStyle = ModernistTextRegular12
                     )
-                    Spacer(modifier = modifier.padding(top = 7.dp))
-                    Row(
-                        horizontalArrangement = Arrangement.spacedBy(space = 10.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        RatingBarComponent()
-                        TextComponent(
-                            modifier = modifier,
-                            text = R.string.game_rating_value,
-                            textColor = ThirdTextColor,
-                            lineHeight = 26.sp,
-                            textStyle = ModernistTextRegular12
-                        )
-                    }
                 }
             }
-        },
-    ) { measurable, constraints ->
-        val largeBox = measurable[0]
-        val smallBox = measurable[1]
-        val looseConstraints = constraints.copy(
-            minWidth = 0,
-            minHeight = 0,
-        )
-        val largePlaceable = largeBox.measure(looseConstraints)
-        val smallPlaceable = smallBox.measure(looseConstraints)
-        layout(
-            width = constraints.maxWidth,
-            height = largePlaceable.height + smallPlaceable.height / 2,
-        ) {
-            largePlaceable.placeRelative(
-                x = 0,
-                y = 0,
-            )
-            smallPlaceable.placeRelative(
-                x = 0,
-                y = largePlaceable.height - smallPlaceable.height / 4
-            )
         }
     }
 }

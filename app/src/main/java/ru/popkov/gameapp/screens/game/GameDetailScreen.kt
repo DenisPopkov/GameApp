@@ -56,10 +56,10 @@ fun GameDetailScreen(
         state = lazyListState
     ) {
         item {
-            HeaderComponent()
+            HeaderComponent(modifier = modifier.fillMaxSize())
         }
         item {
-            Spacer(modifier = modifier.padding(top = 50.dp))
+            Spacer(modifier = modifier.padding(top = 90.dp))
             LazyRow(
                 modifier = modifier.padding(start = 24.dp),
                 horizontalArrangement = Arrangement.spacedBy(space = 10.dp)

@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Background
                 ) {
-                    GameDetailScreen()
+                   GameDetailScreen()
                 }
             }
         }

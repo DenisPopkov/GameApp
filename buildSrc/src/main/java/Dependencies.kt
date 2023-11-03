@@ -3,6 +3,7 @@ object Versions {
     const val COMPOSE_COMPILER = "1.5.3"
     const val COMPOSE_NAVIGATION = "2.7.4"
     const val COMPOSE_HILT_NAVIGATION = "1.0.0"
+    const val CONSTRAINT_LAYOUT_COMPOSE = "1.0.1"
     const val COIL = "2.4.0"
     const val SPLASH = "1.0.0"
     const val ACTIVITY = "1.8.0"
@@ -27,6 +28,8 @@ object ComposeLibs {
     const val MATERIAL = "androidx.compose.material3:material3"
     const val TOOLING = "androidx.compose.ui:ui-tooling"
     const val TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview"
+    const val CONSTRAINT_LAYOUT =
+        "androidx.constraintlayout:constraintlayout-compose:${Versions.CONSTRAINT_LAYOUT_COMPOSE}"
     const val ACTIVITY = "androidx.activity:activity-compose:${Versions.ACTIVITY}"
     const val UI_TEST = "androidx.compose.ui:ui-test-junit4"
     const val NAVIGATION = "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
@@ -62,7 +65,8 @@ object AndroidLibs {
     const val MATERIAL = "com.google.android.material:material:1.10.0"
     const val SERIALIZATION =
         "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.SERIALIZATION}"
-    const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
+    const val COROUTINES_CORE =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES}"
     const val COROUTINES = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
     const val LIVEDATA = "androidx.compose.runtime:runtime-livedata:${Versions.LIVEDATA}"
 }

@@ -28,7 +28,7 @@ fun LogoComponent(
         modifier = modifier.size(size = 88.dp),
         shape = RoundedCornerShape(13.dp),
         colors = CardDefaults.cardColors(Color.Black),
-        border = BorderStroke(width = 3.dp, color = StrokeColor),
+        border = BorderStroke(width = 2.dp, color = StrokeColor),
     ) {
         Box(
             modifier = Modifier.fillMaxSize(),
