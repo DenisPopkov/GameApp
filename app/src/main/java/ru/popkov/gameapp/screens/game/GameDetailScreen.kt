@@ -89,6 +89,7 @@ fun GameDetailScreen(
             )
         }
         item {
+            Spacer(modifier = modifier.padding(top = 12.dp))
             ReviewComponent()
         }
         itemsIndexed(gameDetailsValue.gameReview) { index, reviewer ->

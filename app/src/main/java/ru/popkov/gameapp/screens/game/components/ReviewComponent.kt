@@ -23,7 +23,6 @@ fun ReviewComponent(
     modifier: Modifier = Modifier,
     ratingValue: Float = 4.9f
 ) {
-    Spacer(modifier = modifier.padding(top = 12.dp))
     Row(
         modifier = modifier.padding(start = 24.dp),
         verticalAlignment = Alignment.CenterVertically,
