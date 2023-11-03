@@ -34,7 +34,6 @@ fun ButtonComponent(
         colors = ButtonDefaults.buttonColors(containerColor = buttonContainerColor),
     ) {
         TextComponent(
-            modifier = modifier,
             text = buttonText,
             textColor = buttonColor,
             lineHeight = 24.sp,
