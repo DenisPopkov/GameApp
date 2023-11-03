@@ -28,7 +28,7 @@ fun ReviewerComponent(
     reviewer: ReviewerModel,
     isShouldShowDivider: Boolean = true
 ) {
-    Column(modifier = modifier.padding(horizontal = 24.dp)) {
+    Column(modifier = modifier.padding(start = 24.dp)) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(space = 16.dp)
         ) {

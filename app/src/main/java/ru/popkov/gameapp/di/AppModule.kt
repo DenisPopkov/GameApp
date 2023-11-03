@@ -15,7 +15,7 @@ object AppModule {
     @Provides
     @Singleton
 //    @Binds
-    fun provideGameDetailsInteractor(): GameDetailRepository {
+    fun provideGameDetailsRepository(): GameDetailRepository {
         return GameDetailRepository()
     }
 }
