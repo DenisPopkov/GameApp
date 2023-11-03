@@ -1,11 +1,11 @@
 package ru.popkov.gameapp.di
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import ru.popkov.gameapp.data.interactor.GameDetailInteractor
-import ru.popkov.gameapp.data.interactor.GameDetailInteractorImpl
+import ru.popkov.gameapp.data.interactor.GameDetailRepository
 import javax.inject.Singleton
 
 @Module
@@ -14,7 +14,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideGameDetailsInteractor(): GameDetailInteractor {
-        return GameDetailInteractorImpl()
+//    @Binds
+    fun provideGameDetailsInteractor(): GameDetailRepository {
+        return GameDetailRepository()
     }
 }

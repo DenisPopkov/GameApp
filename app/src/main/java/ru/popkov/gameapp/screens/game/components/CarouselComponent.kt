@@ -1,6 +1,6 @@
 package ru.popkov.gameapp.screens.game.components
 
-import android.util.Log
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
@@ -11,10 +11,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import ru.popkov.gameapp.R
-import ru.popkov.gameapp.common.ImageComponent
 import ru.popkov.gameapp.common.VideoComponent
 import ru.popkov.gameapp.data.models.CarouselMediaModel
 import ru.popkov.gameapp.data.models.CarouselType
@@ -30,16 +30,17 @@ fun CarouselComponent(
     ) {
         items(carouselData.size) {
             when (carouselData[it].mediaType) {
-                CarouselType.IMAGE -> {
-                    ImageComponent(
+                CarouselType.Image -> {
+                    Image(
                         modifier = modifier
                             .size(width = 240.dp, height = 128.dp)
                             .clip(RoundedCornerShape(size = 14.dp)),
-                        image = carouselData[it].media
+                        painter = painterResource(id = carouselData[it].media),
+                        contentDescription = "Carousel image"
                     )
                 }
 
-                CarouselType.VIDEO -> {
+                CarouselType.Video -> {
                     Box(contentAlignment = Alignment.Center) {
                         VideoComponent(
                             modifier = modifier
@@ -47,15 +48,13 @@ fun CarouselComponent(
                                 .clip(RoundedCornerShape(size = 14.dp)),
                             video = carouselData[it].media
                         )
-                        ImageComponent(
+                        Image(
                             modifier = modifier.size(size = 48.dp),
-                            image = R.drawable.ic_blur_button,
+                            painter = painterResource(id = R.drawable.ic_blur_button),
                             contentDescription = "Play icon"
                         )
                     }
                 }
-
-                else -> Log.e("GameDetailScreen: ", "Unknown carousel type!")
             }
         }
     }
@@ -68,11 +67,11 @@ fun CarouselComponentPreview() {
         carouselData = listOf(
             CarouselMediaModel(
                 media = R.drawable.ic_first_carousel_image,
-                mediaType = CarouselType.VIDEO
+                mediaType = CarouselType.Video
             ),
             CarouselMediaModel(
                 media = R.drawable.ic_second_carousel_image,
-                mediaType = CarouselType.IMAGE
+                mediaType = CarouselType.Image
             ),
         )
     )

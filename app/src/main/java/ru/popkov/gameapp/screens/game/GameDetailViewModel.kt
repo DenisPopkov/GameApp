@@ -6,13 +6,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import ru.popkov.gameapp.data.interactor.GameDetailInteractor
+import ru.popkov.gameapp.data.interactor.GameDetailRepository
 import ru.popkov.gameapp.data.models.GameDetailsState
 import javax.inject.Inject
 
 @HiltViewModel
 class GameDetailViewModel @Inject constructor(
-    private val gameDetailInteractor: GameDetailInteractor
+    private val gameDetailInteractor: GameDetailRepository
 ) : ViewModel() {
 
     private val _gameDetailData = MutableStateFlow(GameDetailsState())

@@ -7,21 +7,17 @@ import ru.popkov.gameapp.data.models.GameDetailsModel
 import ru.popkov.gameapp.data.models.ReviewerModel
 import ru.popkov.gameapp.data.models.TagType
 
-interface GameDetailInteractor {
-    suspend fun loadGameDetail(): GameDetailsModel
-}
-
-class GameDetailInteractorImpl : GameDetailInteractor {
-    override suspend fun loadGameDetail(): GameDetailsModel {
+class GameDetailRepository {
+    fun loadGameDetail(): GameDetailsModel {
         return gameDetailMock
     }
 }
 
 val gameDetailMock = GameDetailsModel(
     gameTags = listOf(
-        TagType.MOBA,
-        TagType.MULTIPLAYER,
-        TagType.STRATEGY,
+        TagType.Moba,
+        TagType.Multiplayer,
+        TagType.Strategy,
     ),
     gameReview = listOf(
         ReviewerModel(
@@ -40,11 +36,11 @@ val gameDetailMock = GameDetailsModel(
     gameCarousel = listOf(
         CarouselMediaModel(
             media = R.drawable.ic_first_carousel_image,
-            mediaType = CarouselType.VIDEO
+            mediaType = CarouselType.Video
         ),
         CarouselMediaModel(
             media = R.drawable.ic_second_carousel_image,
-            mediaType = CarouselType.IMAGE
+            mediaType = CarouselType.Image
         ),
     )
 )

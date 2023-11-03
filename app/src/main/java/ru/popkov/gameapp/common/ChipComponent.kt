@@ -6,9 +6,11 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.AssistChip
 import androidx.compose.material3.AssistChipDefaults
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -31,12 +33,11 @@ fun ChipComponent(
         border = null,
         colors = AssistChipDefaults.assistChipColors(containerColor = chipContainerColor),
         label = {
-            TextComponent(
+            Text(
                 modifier = modifier,
-                text = chipText,
-                textColor = chipTextColor,
-                lineHeight = 12.sp,
-                textStyle = MontserratTextMedium10
+                text = stringResource(id = chipText),
+                color = chipTextColor,
+                style = MontserratTextMedium10
             )
         }
     )

@@ -7,14 +7,14 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Divider
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import ru.popkov.gameapp.R
-import ru.popkov.gameapp.common.TextComponent
 import ru.popkov.gameapp.data.models.ReviewerModel
 import ru.popkov.gameapp.ui.theme.DividerColor
 import ru.popkov.gameapp.ui.theme.ModernistTextRegular12
@@ -39,29 +39,23 @@ fun ReviewerComponent(
             Column(
                 verticalArrangement = Arrangement.spacedBy(space = 7.dp)
             ) {
-                TextComponent(
-                    modifier = modifier,
-                    text = reviewer.reviewerName,
-                    textColor = Color.White,
-                    lineHeight = 20.sp,
-                    textStyle = ModernistTextRegular16
+                Text(
+                    text = stringResource(id = reviewer.reviewerName),
+                    color = Color.White,
+                    style = ModernistTextRegular16
                 )
-                TextComponent(
-                    modifier = modifier,
-                    text = reviewer.reviewDatePublished,
-                    textColor = ThirdTextColor,
-                    lineHeight = 15.sp,
-                    textStyle = ModernistTextRegular12
+                Text(
+                    text = stringResource(id = reviewer.reviewDatePublished),
+                    color = ThirdTextColor,
+                    style = ModernistTextRegular12
                 )
             }
         }
         Spacer(modifier = modifier.padding(top = 16.dp))
-        TextComponent(
-            modifier = modifier,
-            text = reviewer.reviewComment,
-            textColor = SecondTextColor,
-            lineHeight = 20.sp,
-            textStyle = ModernistTextRegular12
+        Text(
+            text = stringResource(id = reviewer.reviewComment),
+            color = SecondTextColor,
+            style = ModernistTextRegular12
         )
     }
 
