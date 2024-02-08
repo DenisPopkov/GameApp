@@ -77,6 +77,7 @@ dependencies {
     implementation(ComposeLibs.UI)
     implementation(ComposeLibs.MATERIAL)
     implementation(ComposeLibs.TOOLING_PREVIEW)
+    implementation(ComposeLibs.CONSTRAINT_LAYOUT)
     implementation(ComposeLibs.NAVIGATION)
     implementation(ComposeLibs.HILT_NAVIGATION)
     implementation(ComposeLibs.ACTIVITY)
